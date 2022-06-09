@@ -1,0 +1,25 @@
+#img1{}
+#img1 img{
+        height: 200px;
+        width: 200px;
+        border: 1px solid red;
+        object-fit: contain;
+    }
+.container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* height: 100px; */
+    /* width: 100px; */
+    /* border: 1px solid; */
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container img{
+    /* margin: auto; */
+    /* height: 500px; */
+}

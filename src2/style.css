@@ -13,6 +13,7 @@
     display: flex;
     position: relative;
     right: 0%;
+    transition: all 1s;
 }
 
 #container .player img{
@@ -61,6 +62,32 @@
 }
 #container .shift .right{
     right: 20px;
+}
+#container .bottom{
+    position: absolute;
+    /*水平居中*/
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    /*最大宽度等于内部元素宽度*/
+    width: max-content;
+    /*内部元素间隔*/
+    gap: 10px;
+
+    bottom: 40px;
+    display: flex;
+}
+#container .bottom .setIndex{
+    height: 4px;
+    width: 26px;
+    background-color: teal;
+    opacity: 0.5;
+    cursor: pointer;
+}
+#container:hover .bottom .setIndex,
+#container:hover .shift .btn{
+    opacity: 1;
 }
 
 /* .container .left{

@@ -18,8 +18,48 @@
         <div class="btn left" onclick="left()">&lt;</div>
         <div class="btn right" onclick="right()">&gt;</div>  
       </div>
+      <div class="bottom">
+        <div class="setIndex" onclick="setIndex(0)"></div>
+        <div class="setIndex" onclick="setIndex(1)"></div>
+        <div class="setIndex" onclick="setIndex(2)"></div>
+      </div>
     </div>
 
-  <script src="./main.js"></script>
+  <script>
+    let index = 0;
+
+    function refresh(){
+        // 限制index值范围
+        if(index>2){
+            index=2;
+        }else if(index<0){
+            index=0;
+        }
+        // 获取轮播包裹元素.width
+        let container = document.querySelector('#container');
+      
+        let {width} = getComputedStyle(container);
+        width = Number(width.slice(0, -2));
+      
+        container.querySelector('.player').style.right = index * width + 'px';
+    }
+
+    function left(){
+        index--;
+        refresh()
+    }
+    function right(){
+        index++;
+        refresh();
+    }
+
+    function setIndex(id){
+        index=id;
+        refresh()
+    }
+
+    // refresh();
+  </script>
+  <!-- <script src="./main.js"></script> -->
 </body>
 </html>

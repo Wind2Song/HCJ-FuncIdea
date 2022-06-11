@@ -18,6 +18,12 @@
 let index = 0;
 
 function refresh(){
+    // 限制index值范围
+    if(index>2){
+        index=2;
+    }else if(index<0){
+        index=0;
+    }
     // 获取轮播包裹元素.width
     let container = document.querySelector('#container');
 
@@ -35,5 +41,11 @@ function right(){
     index--;
     refresh();
 }
+
+function setIndex(id){
+    index=id;
+    refresh()
+}
+
 
 refresh();

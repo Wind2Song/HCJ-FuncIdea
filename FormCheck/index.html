@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormCheck</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <!-- <div class="container">
+        <form action=""> -->
+            <!-- 姓名 -->
+            <!-- <div class="form-name">
+                <label for="userName">姓名
+                    <input type="text" class="form-control" id="userName" placeholder="请输入姓名">
+                </label>
+            </div> -->
+        <!-- </form>
+    </div> -->
+    <div class="container" style="margin-top: 20px;">
+        <form class="form-horizontal" role="form">
+            <!-- 姓名文本框 -->
+            <div class="form-group">
+              <label for="useName" class="col-sm-2 control-label">姓名</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="useName" placeholder="请输入姓名">
+              </div>
+            </div>
+            <!-- 密码框 -->
+            <div class="form-group">
+              <label for="userPwd" class="col-sm-2 control-label">密码</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="userPwd" placeholder="请输入密码">
+              </div>
+            </div>
+            <!-- 年龄数值框 -->
+            <div class="form-group">
+                <label for="userAge" class="col-sm-2 control-label">年龄</label>
+                <div class="col-sm-8">
+                  <input type="number" class="form-control" id="userAge" placeholder="请输入年龄">
+                </div>
+            </div>
+            <!-- 性别单选框 -->
+            <div class="form-group">
+                <label for="userSex" class="col-sm-2 control-label">性别</label>
+                <div class="col-sm-8">
+                    <label class="radio-inline">
+                        <input type="radio" name="userSex" value="男"> 男
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="userSex" value="女"> 女
+                    </label>                
+                    <label class="radio-inline">
+                        <input type="radio" name="userSex" value="未知"> 未知
+                    </label>      
+                </div>
+            </div>
+
+            <!-- 爱好复选框 -->
+            <div class="form-group">
+                <label for="userLove" class="col-sm-2 control-label">爱好</label>
+                <div class="col-sm-8">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="userLove" value="唱歌"> 唱歌
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="userLove" value="跳舞"> 跳舞
+                    </label>                
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="userLove" value="未知"> 未知
+                    </label>      
+                </div>
+            </div>            
+
+            <!-- 城市下拉框 -->
+            <div class="form-group">
+                <label for="userCity" class="col-sm-2 control-label">城市</label>
+                <div class="col-sm-8">
+                    <select class="form-control" id="userCity" name="userCity">
+                      <option value="">-请选择-</option>
+                      <option value="北京">北京</option>
+                      <option value="上海">上海</option>
+                      <option value="光照">光照</option>
+                      <option value="深圳">深圳</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="userRemark" class="col-sm-2 control-label">简介</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" name="userRemark" id="userRemark" rows="3"></textarea>
+                </div>
+            </div>            
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-8">
+                <button type="button" class="btn btn-default" id="submitBtn">提交</button>
+                &nbsp;&nbsp;&nbsp;
+                <span id="msg" style="color: red;"></span>
+              </div>
+            </div>
+        </form>
+    </div>
+    <!-- 思路：
+            1.点击之后开始验证数据
+            2.点击button按钮，事件触发执行————改成 给button元素绑定点击事件
+            3.获取表单元素的值
+            4.条件判断 对值进行条件判断————封装if操作到函数（输入值）输出判断结果true/false
+            5.不满足 则提示不满足 显示错误原因插入span元素
+    -->
+    <script>
+        // 1.给button元素绑定点击事件
+        document.getElementById("submitBtn").onclick = function(){
+
+            // 2.获取表单元素的值
+
+        }
+    </script>
+</body>
+</html>

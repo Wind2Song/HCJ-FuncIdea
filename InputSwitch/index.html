@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InputSwitch</title>
+    <style>
+    .theme1 {
+        /* 页面的文本色 */
+        --text-color: #333;
+        /* 页面的背景色 */
+        --back-color: white;
+        /* brand 的背景色 */
+        --brand-color: #eee;
+    }
+
+    /* 夜间主题 */
+    .theme2 {
+        --text-color: white;
+        --back-color: #333;
+        --brand-color: black;
+    }
+
+    /* 皮卡丘主题 */
+    .theme3 {
+        --text-color: black;
+        --back-color: #fed643;
+        --brand-color: #fc272b;
+    }        
+        *{box-sizing: border-box;margin: 0;padding: 0;}
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container{
+            border: 1px solid;
+            max-width: max-content;
+            display:inline-flex;
+            background-color: #eee;
+
+            border-radius: 16px;
+            overflow: hidden;
+
+            font-weight: bold;
+            /* display: flex; */
+            /* justify-content: center; */
+        }
+        .container label input{
+            /* cursor: pointer; */
+            display: none;
+        }
+        .container label div{
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 48px;
+            border: 1px solid red;
+        }
+        .container input:checked + div{
+            background-color: teal;
+            color: white;
+        }
+
+        .show{
+            border-radius: 20px;
+            background-color: grey;
+            color: #eee;
+            font-size: 64px;
+            font-weight: bold;
+            height: 400px;
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <label for="theme1">
+      <input id="theme1" type="radio" name="switch"> 
+      <div>主题1</div>
+    </label>
+    <label for="theme2">
+      <input id="theme2" type="radio" name="switch"> 
+      <div>主题2</div>
+    </label>
+    <label for="theme3">
+      <input id="theme3" type="radio" name="switch">
+      <div>主题3</div>
+    </label>
+  </div>
+  <div class="show">
+    我要学编程
+  </div>
+</body>
+</html>

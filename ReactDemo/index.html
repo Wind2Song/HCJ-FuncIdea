@@ -21,9 +21,13 @@
                     num:'',
                     text:''
                 }
+                this.keyRef = React.createRef()
             }
             getValue(e){
-                console.log(typeof +e.target.value)
+                // console.log(typeof +e.target.value)
+                console.log(this)
+                console.log(this.keyRef.current)
+                // console.log(this.refs.inpDOM)
                 this.setState({
                     num:+e.target.value
                 })
@@ -35,18 +39,34 @@
             }
 
             render(){
+                let SpanDOM = React.forwardRef((props,refValue)=>{
+                    return <span ref={refValue}>+</span>
+                })
                 return <div>
                     <span>{this.props.number}</span>    
-                    <span>+</span>
-                    <input type="text" onChange={(e)=>{this.getValue(e)}} />
+                    <SpanDOM ref={this.keyRef}/>
+                    <input ref="inpDOM" type="text" onChange={(e)=>{this.getValue(e)}} />
                     <button onClick={()=>{this.add()}}>=</button>
                     <span>{this.state.text}</span>
                 </div>
             }
         }
 
+        const List = (props)=>{
+            let UlDOM = <ul>
+                {props.list.map((i,index) => <li key={index}>{i}</li>)}   
+            </ul>;
+            let SpanDOM = <span>您的列表里暂时啥都没</span>
+
+            let Ren = props.number>0?UlDOM:SpanDOM
+
+            return <div>{
+                Ren
+            }</div>
+        }
         ReactDOM.render(
-           <Count ddm='给你用了' number={1}/>,                          // 组件名
+        //    <List list={[1,2,1,2,5,5,9]} ddm='给你用了' number={1}/>,                          // 组件名
+            <Count num=""/>,
             document.getElementById('app')  // 挂载点，只有这里操作了真实DOM
         )
     </script>

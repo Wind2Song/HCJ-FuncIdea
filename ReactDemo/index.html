@@ -30,12 +30,28 @@
             let text = props.ddm ? props.ddm : 'props.key不存在'
             return  <h1 className="">{props.ddm}</h1>
         }
+
         class H5DOM extends React.Component{
             constructor(props){
                 super(props)
+                this.Show = this.Show.bind(this);
+                this.state={
+                    title:this.props.title
+                }
+            }
+            Show(){
+                console.log(this)
+                // console.log(this.props.ddm)
+            }
+            switchTitle(){
+                this.state.title = "我是新标题"
+                console.log(this.state.title)
+                this.setState({title:"我是新标题"})
+                console.log('---')
+                console.log(this.state.title)
             }
             render(){
-                let H1DOM = <h1>h1{this.props.ddm}</h1>,
+                let H1DOM = <h1 onClick={()=>{this.switchTitle()}}>h1{this.state.title}</h1>,
                 H2DOM = <h2>h2</h2>,
                 H3DOM = <h3>h3</h3>;
                 return <div>

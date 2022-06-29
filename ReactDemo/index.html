@@ -14,58 +14,39 @@
     <!-- <script type="text/babel" src="./main.jsx"></script> -->
     <script type="text/babel">
         console.log('执行了')
-        const H1DOM = <h1 style={true?{color:'red'}:''}>我是HTML in js</h1>
-        const H3DOM = React.createElement('h1', {style:{color:'red'}},'新白透')
-        class H4DOM extends React.Component{
+        class Count extends React.Component{
             constructor(props){
                 super(props)
-            }
-            render(){
-                return <h1>我是class{this.props.ddm}</h1>
-            }
-        }
-        //  声明变量
-        const H2DOM = (props) =>{
-            console.log(props)
-            let text = props.ddm ? props.ddm : 'props.key不存在'
-            return  <h1 className="">{props.ddm}</h1>
-        }
-
-        class H5DOM extends React.Component{
-            constructor(props){
-                super(props)
-                this.Show = this.Show.bind(this);
-                this.state={
-                    title:this.props.title
+                this.state = {
+                    num:'',
+                    text:''
                 }
             }
-            Show(){
-                console.log(this)
-                // console.log(this.props.ddm)
+            getValue(e){
+                console.log(typeof +e.target.value)
+                this.setState({
+                    num:+e.target.value
+                })
             }
-            switchTitle(){
-                this.state.title = "我是新标题"
-                console.log(this.state.title)
-                this.setState({title:"我是新标题"})
-                console.log('---')
-                console.log(this.state.title)
+            add(){
+                this.setState({
+                    text:this.state.num+this.props.number
+                })
             }
+
             render(){
-                let H1DOM = <h1 onClick={()=>{this.switchTitle()}}>h1{this.state.title}</h1>,
-                H2DOM = <h2>h2</h2>,
-                H3DOM = <h3>h3</h3>;
                 return <div>
-                    {
-                        this.props.title === 1?H1DOM:
-                        this.props.title === 2?H2DOM:
-                        H3DOM
-                    }
+                    <span>{this.props.number}</span>    
+                    <span>+</span>
+                    <input type="text" onChange={(e)=>{this.getValue(e)}} />
+                    <button onClick={()=>{this.add()}}>=</button>
+                    <span>{this.state.text}</span>
                 </div>
             }
         }
-        //  使用标签 
+
         ReactDOM.render(
-           <H5DOM ddm='给你用了' title={1}/>,                          // 组件名
+           <Count ddm='给你用了' number={1}/>,                          // 组件名
             document.getElementById('app')  // 挂载点，只有这里操作了真实DOM
         )
     </script>

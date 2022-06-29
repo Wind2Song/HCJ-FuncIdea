@@ -30,9 +30,26 @@
             let text = props.ddm ? props.ddm : 'props.key不存在'
             return  <h1 className="">{props.ddm}</h1>
         }
+        class H5DOM extends React.Component{
+            constructor(props){
+                super(props)
+            }
+            render(){
+                let H1DOM = <h1>h1{this.props.ddm}</h1>,
+                H2DOM = <h2>h2</h2>,
+                H3DOM = <h3>h3</h3>;
+                return <div>
+                    {
+                        this.props.title === 1?H1DOM:
+                        this.props.title === 2?H2DOM:
+                        H3DOM
+                    }
+                </div>
+            }
+        }
         //  使用标签 
         ReactDOM.render(
-           <H4DOM ddm='给你用了' />,                          // 组件名
+           <H5DOM ddm='给你用了' title={1}/>,                          // 组件名
             document.getElementById('app')  // 挂载点，只有这里操作了真实DOM
         )
     </script>

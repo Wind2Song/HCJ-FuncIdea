@@ -7,28 +7,42 @@
     <title>this</title>
 </head>
 <body>
+    <script src="./main.js"></script>
     <script>
-        let a = 1;
-        let b = {
-            k1:1,
-            k2:2,
-            k3:3
+        // 全局作用域
+        // var a=2;
+
+        // console.log(a)
+
+        // function fun(){
+        //     console.log(a)
+        // }
+
+        // function foo(){
+        //     console.log(a);
+        //     let a=2;
+        // }
+        // foo()
+
+        {
+            // const a=1
+            // console.log(a)
+            // console.log(a)
         }
+        // console.log(a)
 
-        a = {
-            ...b
-        };
-
-        a.k3 = 4;
-
-        console.log(a,b)
-
-        function foo(){
-            console.log(a);
-            var a=2;
-        }
-        foo();
-
+    </script>
+    <script>
+        // console.log(a)
+        var a = 10;
+        (function (){
+            console.log(a)
+            a = 5
+            // console.log(a)
+            console.log(window.a)
+            var a=20;
+            console.log(a)
+        })()
 
     </script>
 </body>

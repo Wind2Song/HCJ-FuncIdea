@@ -15,11 +15,21 @@
             k3:3
         }
 
-        a = b;
+        a = {
+            ...b
+        };
 
         a.k3 = 4;
 
         console.log(a,b)
+
+        function foo(){
+            console.log(a);
+            var a=2;
+        }
+        foo();
+
+
     </script>
 </body>
 </html>

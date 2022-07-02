@@ -73,5 +73,28 @@
         };
         obj1.o1.fn()
     </script> -->
+    <script>
+        // console.log(fun)
+        function fun(){
+            var a = 5
+        }
+        // console.log(a)
+
+        // 访问构造函数内部变量
+        function Foo(){
+            var name = 'zhaozhao'
+            var age = 18
+            var f = function(){
+                alert('alert了')
+            }
+            this.name = 22;
+            // this.age = age;
+
+            return {name,age,f}
+        }
+        var FooObj = new Foo()
+        var obj = Foo()
+        console.log(FooObj,obj)
+    </script>
 </body>
 </html>

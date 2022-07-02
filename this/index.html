@@ -94,7 +94,19 @@
         }
         var FooObj = new Foo()
         var obj = Foo()
-        console.log(FooObj,obj)
+        // console.log(FooObj,obj)
+
+        // 闭包
+        function sx(){
+            let lives = 23
+            return function xc(){
+                lives--;
+                console.log(lives)
+            }
+        }
+        let listHP = sx()
+        // listHP()
+        
     </script>
 </body>
 </html>

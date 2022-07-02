@@ -45,3 +45,40 @@
 // console.log(window.xxx)
 // console.log(obj.getX())
 // console.log(obj.getY())
+function biBao(){
+    var isHTTP = true
+    return function(){
+        if(isHTTP){
+            alert('正在发送请求')
+            isHTTP = false
+            // ......正在进行异步任务（注册用户信息中）
+            // 注册完毕，就把isHTTP置为true
+        }else{
+            return '你已经在发送请求'
+        }
+    }
+}
+
+var arr = [1,2,3,4,5,6,7,8,9]
+
+for(var i=0;i<arr.length;i++){
+    setTimeout(()=>{
+        console.log(i)
+    },i*100,i)
+}
+
+// 牛刀小试
+function foo(){
+    var num = 18
+    var obj = {
+        text:'我是字符串',
+        num:20,
+        getNum:function(){
+            return num
+        }
+    }
+    return obj
+}
+var obj = foo()
+var age = obj.getNum()
+console.log(age)

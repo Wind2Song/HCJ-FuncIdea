@@ -7,43 +7,70 @@
     <title>this</title>
 </head>
 <body>
+    <!-- script标签内会形成一个执行栈空间 -->
+    <!-- 过了代码解释阶段后，进入代码执行阶段，此时会产生执行上下文（/作用域） -->
+    <!-- 通过this就可以知道当前上下文是什么 -->
     <script src="./main.js"></script>
     <script>
-        // 全局作用域
-        // var a=2;
-
-        // console.log(a)
-
-        // function fun(){
-        //     console.log(a)
-        // }
-
-        // function foo(){
-        //     console.log(a);
-        //     let a=2;
-        // }
-        // foo()
-
-        {
-            // const a=1
-            // console.log(a)
-            // console.log(a)
+        var name = 'Tina'
+        var fun = function(){
+            console.log(this.name)
         }
-        // console.log(a)
 
-    </script>
-    <script>
-        // console.log(a)
-        var a = 10;
-        (function (){
-            console.log(a)
-            a = 5
-            // console.log(a)
-            console.log(window.a)
-            var a=20;
-            console.log(a)
-        })()
+        // console.log(this)
+        // console.log(window.name)
+        // this.fun()
 
+        var obj = {
+            a:function(){
+                // console.log('obj.a')
+                // console.log(this)
+                function f(){
+                    console.log(this)
+                }
+                f()
+            },
+            b:'占位用的'
+        }
+        // this.obj.a();
+
+        // var foo = obj.a // 变量foo的值是一个地址，对应的是一个函数；相当于在全局作用域声明了一个foo函数
+        // foo() // 故this指向window
+
+        function app(){
+            console.log('下面是window.app()打印的this：')
+            console.log(this)
+        }
+        // app()
+
+        // 小试牛刀
+        var A = {
+            name:'zs',
+            f:function(){
+                console.log('姓名：'+this.name)
+            }
+        }
+        var B = {
+            name:'ls'
+        }
+
+        B.f = A.f
+        B.f()
+        A.f()
+
+        // 小试牛刀2
+        function f2(){
+            console.log(this.a)
+        }
+        var obj2 = {
+            a:2,
+            fn:f2
+        };
+        var obj1 = {
+            a:1,
+            o1:obj2
+        };
+        obj1.o1.fn()
     </script>
 </body>
 </html>

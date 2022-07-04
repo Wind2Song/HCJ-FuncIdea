@@ -106,6 +106,31 @@
         }
         let listHP = sx()
         // listHP()
+
+        // apply/call/bind
+        var x = 1;
+        var obj = {
+            x:2,
+            run:function(val){
+                return this.x+val
+            }
+        }
+        console.log(obj.run('你好')) // 2你好
+        var f = obj.run;
+        // f.bind(obj,'不好','好')
+        console.log(f.bind(obj,'不好','好')())    // 1不好    
+
+        function Fun(){
+            this.name = 'ff'
+        }
+        Fun.prototype={
+            run:function(){}
+        }
+
+        var obj = new Fun()
+        console.log(obj)
+
+        
         
     </script>
 </body>

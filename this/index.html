@@ -164,8 +164,8 @@
         obj1.foo()
         obj2.foo();
 
-        obj1.foo.call(obj2);
-        obj2.foo.call(obj1);
+        // obj1.foo.call(obj2);
+        // obj2.foo.call(obj1);
 
         // 面试题
         function test(arg){
@@ -175,8 +175,24 @@
         var x = test(5);
         var y = test(6);
 
-        console.log(x.xxxxx);
-        console.log(y.y.x)
+        // console.log(x.xxxxx);
+        // console.log(y.y.x)
+
+        function fun(type,text){
+            var o = new Object();
+
+            if(type === 'alert'){
+                window[type](text)
+            }
+            if(type === 'confirm'){
+                window[type](text)
+            }
+
+            return o
+        }
+        var obj1 = fun('alert','弹窗')
+        console.log(obj1)
+        document.write('hi')
     </script>
 </body>
 </html>

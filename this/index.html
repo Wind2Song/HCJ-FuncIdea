@@ -128,10 +128,55 @@
         }
 
         var obj = new Fun()
-        console.log(obj)
+        // console.log(obj)
 
-        
-        
+        // 面试题
+        var a = 5;
+        function fn1(){
+            var a = 6;
+            console.log(a);
+            console.log(this.a)
+        }
+        function fn2(fn){
+            var a = 7;
+            fn()
+        }
+
+        var obj = {
+            a:8,
+            getA:fn1
+        }
+        // fn2(obj.getA); // 6 5
+
+        //面试题
+        function foo(){
+            console.log(this.a);
+        }
+        var obj1 = {
+            a:3,
+            foo:foo
+        }
+        var obj2 = {
+            a:5,
+            foo:foo
+        }
+
+        obj1.foo()
+        obj2.foo();
+
+        obj1.foo.call(obj2);
+        obj2.foo.call(obj1);
+
+        // 面试题
+        function test(arg){
+            this.x = arg;
+            return this;
+        }
+        var x = test(5);
+        var y = test(6);
+
+        console.log(x.xxxxx);
+        console.log(y.y.x)
     </script>
 </body>
 </html>

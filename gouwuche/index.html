@@ -6,63 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>购物车</title>
     <link rel="stylesheet" href="./css/share.css">
-    
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
     <div class="cart">
         <!-- 购物车顶部 -->
-      <div class="cart-head">
-        <div class="col col-check">
+      <div class="cart-head u-clearfix">
+        <div class="col col-check u-l">
             <input type="checkbox" id="all">
             <label for="all">全选</label>
         </div>
-        <div class="col col-img">&nbsp;</div>
-        <div class="col col-name">商品名称</div>
-        <div class="col col-price">单价</div>
-        <div class="col col-num">数量</div>
-        <div class="col col-sum">小计</div>
-        <div class="col col-action">操作</div>
+        <div class="col col-img u-l">&nbsp;</div>
+        <div class="col col-name u-l">商品名称</div>
+        <div class="col col-price u-l">单价</div>
+        <div class="col col-num u-l">数量</div>
+        <div class="col col-sum u-l">小计</div>
+        <div class="col col-action u-r">操作</div>
       </div>
 
       <div class="cart-middle">
             <!-- 商品列表 -->
         <div class="list-item">
-            <div class="list-box">
-                <div class="col col-check">
+            <div class="item-box u-clearfix">
+                <div class="col col-check u-l">
                     <input type="checkbox" id="all">
                     
                 </div>
-                <div class="col col-img">
-                    图片
-                    <!-- <img src="" alt=""> -->
+                <div class="col col-img u-l">
+                    <img src="./image/sp.png" alt="" height="60" width="60">
                 </div>
-                <div class="col col-name">
+                <div class="col col-name u-l">
                     小米10 全网通版 8GB+128GB 钛银黑
                 </div>
-                <div class="col col-price">3799元</div>
-                <div class="col col-num">
+                <div class="col col-price u-l">3799元</div>
+                <div class="col col-num u-l">
+                  <div class="change-goods-num">
                     <a href="javascript:;;">-</a>
-                    <input type="text">
+                    <input type="text" value="1">
                     <a href="javascript:;;">+</a>
+                  </div>
                 </div>
-                <div class="col col-sum">小计</div>
-                <div class="col col-action">操作</div>        
+                <div class="col col-sum u-l">5656元</div>
+                <div class="col col-action u-r">删除</div>        
             </div>
+            
         </div>
+        <div class="list-item">
+            <div class="item-box u-clearfix">
+                <div class="col col-check u-l">
+                    <input type="checkbox" id="all">
+                    
+                </div>
+                <div class="col col-img u-l">
+                    <img src="./image/sp.png" alt="" height="60" width="60">
+                </div>
+                <div class="col col-name u-l">
+                    小米10 全网通版 8GB+128GB 钛银黑
+                </div>
+                <div class="col col-price u-l">3799元</div>
+                <div class="col col-num u-l">
+                  <div class="change-goods-num">
+                    <a href="javascript:;;">-</a>
+                    <input type="text" value="1">
+                    <a href="javascript:;;">+</a>
+                  </div>
+                </div>
+                <div class="col col-sum u-l">5656元</div>
+                <div class="col col-action u-r">删除</div>        
+            </div>
+            
+        </div> 
+        <div class="list-item">
+            <div class="item-box u-clearfix">
+                <div class="col col-check u-l">
+                    <input type="checkbox" id="all">
+                    
+                </div>
+                <div class="col col-img u-l">
+                    <img src="./image/sp.png" alt="" height="60" width="60">
+                </div>
+                <div class="col col-name u-l">
+                    小米10 全网通版 8GB+128GB 钛银黑
+                </div>
+                <div class="col col-price u-l">3799元</div>
+                <div class="col col-num u-l">
+                  <div class="change-goods-num">
+                    <a href="javascript:;;">-</a>
+                    <input type="text" value="1">
+                    <a href="javascript:;;">+</a>
+                  </div>
+                </div>
+                <div class="col col-sum u-l">5656元</div>
+                <div class="col col-action u-r">删除</div>        
+            </div>
+            
+        </div>              
       </div>
 <!-- 购物车底部 -->
-      <div class="cart-foot">
-        <div class="selection-left">
+      <div class="cart-foot u-clearfix">
+        <div class="section-left u-l">
             <a href="">继续购物</a>
-            <span>已选择<i>0</i>件商品</span>
+            <span>已选择 <i>0</i> 件商品</span>
         </div>
 
-        <div>去结算</div>
-        <div>
-            合计：<em>56977</em>元
+        <div class="u-r settlement">去结算</div>
+        <div class="u-r total-price">
+            合计：<em>56977</em> 元
         </div>
 
       </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 </html>
